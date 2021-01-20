@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #000000;
+  font-size: 3rem;
+}
+
+h2 {
+  color: #000000;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+.btnPlay,
+button,
+input {
+  font: 2rem 'Montserrat';
+  outline: none;
+  border: none;
+  background: linear-gradient(45deg, #C2F22C 0%, #95D030 100%);
+  color: #000000;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.btnPlay,
+input[type=button],
+input[type=submit],
+button {
+  -webkit-transition: 0.3s ease transform;
+  transition: 0.3s ease transform;
+  cursor: pointer;
+}
+
+.btnPlay:hover,
+input[type=button]:hover,
+input[type=submit]:hover,
+button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+section .btnPlay {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+}
+
+section .btnPlay p {
+  font-size: 2.5rem;
+}
+
+section .btnPlay .img-box {
+  width: 50px;
+  height: 50px;
+}
+
+/* Game */
+#game {
+  background-color: #ccc;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+}
+
+#game #canvas {
+  border: 2px solid #0c1;
+}
+
+#game .time,
+#game .score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+  width: 250px;
+  text-align: center;
+  font-size: 3rem;
+}
+
+#game .time p,
+#game .score p {
+  margin-top: 20px;
+}
+
+#game .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 3rem;
+}
+
+#game .info .img-box {
+  width: 200px;
+  height: 200px;
+}
+
+#game .info .btnAgain {
+  display: none;
+}
+
+#game .info .btnAgain.show {
+  display: block;
+}
+
+#game .addToStats {
+  row-gap: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: none;
+}
+
+#game .addToStats.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* End Game */
+/* Score Board */
+#scoreBoard {
+  padding: 5rem 0rem;
+  background-color: #ccc;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 5rem;
+}
+
+#scoreBoard .addToStats {
+  row-gap: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: flex;
+}
+
+#scoreBoard h2 {
+  line-height: 4rem;
+}
+
+#scoreBoard > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#scoreBoard > div .stats-table {
+  border-collapse: separate;
+  border-spacing: 1rem;
+}
+
+#scoreBoard > div .stats-table tr:nth-child(even) td {
+  background: linear-gradient(45deg, #b5de6e 0%, #c9f344 100%);
+}
+
+#scoreBoard > div .stats-table tr th, #scoreBoard > div .stats-table tr td {
+  font-size: 3rem;
+  background: linear-gradient(45deg, #baf00f 0%, #95D030 100%);
+  padding: 10px 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#scoreBoard > div .stats-table tr th {
+  background: linear-gradient(45deg, #98c50c 0%, #86bc2b 100%);
+}
+
+#scoreBoard .winning_cup {
+  width: 200px;
+  height: 200px;
+}
+
+/* End Score Board */
+/*# sourceMappingURL=style.css.map */

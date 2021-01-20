@@ -1,0 +1,188 @@
+$primaryTextColor:#000000;
+$buttonBG:#C2F22C;
+$buttonBGsec:#95D030;
+
+
+@function linearBG($firstC, $secondC, $degrees){
+	@return linear-gradient(#{$degrees}deg, #{$firstC} 0%, #{$secondC} 100%);
+}
+@mixin wrapperHoriz{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+}
+@mixin wrapperVertic{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+@mixin btnTransition{
+	transition: 0.3s ease transform;
+	&:hover{
+		transform: scale(1.05);
+	}
+}
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap");
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+.container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+h1{
+	text-transform: uppercase;
+	color: $primaryTextColor;
+	font-size: 3rem;
+}
+h2{
+	color: $primaryTextColor;
+	font-size: 2rem;	
+}
+p{
+	font-size:1.5rem;
+}
+.btnPlay,
+button,
+input{
+	font:2rem 'Montserrat';
+	outline:none;
+	border:none;
+	background:linearBG($buttonBG, $buttonBGsec, 45);
+	color:#{$primaryTextColor};
+	border-radius: 5px;
+	padding:5px 10px;
+	text-align: center;
+}
+.btnPlay,
+input[type=button],
+input[type=submit],
+button{
+	@include btnTransition();
+	cursor: pointer;
+}
+section{
+	.btnPlay{
+		position:absolute;
+		top:5px;
+		left:5px;
+		@include wrapperHoriz();
+		column-gap: 2rem;
+		p{
+			font-size: 2.5rem;
+		}
+		.img-box{
+			width: 50px;
+			height: 50px;
+		}
+	}
+}
+/* Game */
+#game{
+    background-color: #ccc;
+	justify-content: space-evenly;
+	min-width: min-content;
+	#canvas{
+		border: 2px solid #0c1;
+	}
+	.time,
+	.score{
+		@include wrapperVertic();
+		margin-top:20px;
+		width: 250px;
+		text-align: center;
+		font-size: 3rem;
+		p {
+			margin-top: 20px;
+		}
+	}
+	.info{
+		@include wrapperVertic();
+		row-gap: 3rem;
+		.img-box{
+			width: 200px;
+			height: 200px;
+		}
+		.btnAgain{
+			display:none;
+			&.show{
+				display: block;
+			}
+		}
+	}
+	.addToStats{
+		row-gap: 0.5rem;
+		@include wrapperVertic();
+		display:none;
+		&.show{
+			display:flex;
+		}
+	}
+}
+/* End Game */
+
+
+/* Score Board */
+#scoreBoard{
+	padding:5rem 0rem;
+    background-color: #ccc;
+	flex-direction: column;
+	row-gap: 5rem;
+	.addToStats{
+		row-gap: 0.5rem;
+		@include wrapperVertic();
+		display:flex;
+	}
+	h2{
+		line-height: 4rem;
+	}
+	& > div{
+		@include wrapperVertic();
+		.stats-table{
+			border-collapse: separate;
+			border-spacing: 1rem;
+			tr{
+				&:nth-child(even) td{
+					background: linearBG(lighten($buttonBGsec, 15%),lighten($buttonBG, 5%), 45);	
+				}
+				th, td{
+					font-size: 3rem;
+					background: linearBG(darken($buttonBG, 6%),$buttonBGsec, 45);
+					padding: 10px 25px;
+					border-radius: 10px;
+					text-align: center;
+				}
+				th{
+					background: linearBG(darken($buttonBG, 15%),darken($buttonBGsec, 5%), 45);
+				}
+			}
+		}
+	}
+	.winning_cup{
+		width: 200px;
+		height: 200px;
+	}
+}
+/* End Score Board */

@@ -1,3 +1,3 @@
 # Snake
 Jedná se o klasickou hru Snake s možností přidání globálních statistik.
-![image info](img/snake.png)
+![Screen ze hry](img/game.png)

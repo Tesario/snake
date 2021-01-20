@@ -1,2 +1,2 @@
 # Snake
-Úplně klasická old school hra Snake s možností přidání globálních statistik.
+Jedná se o klasickou hru Snake s možností přidání globálních statistik.
